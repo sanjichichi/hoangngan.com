@@ -1,0 +1,223 @@
+<head>
+
+<link
+rel="stylesheet"
+href="css/style-old.css">
+
+</head>
+<div class="certificate">
+
+    <img
+    src="anhnen/chungnhan-bg.png"
+    class="bg">
+
+    <img
+    src="anhnen/logo.jpg"
+    class="logo">
+
+    <div class="truong">
+        TRƯỜNG THCS HOÀNG NGÂN
+    </div>
+
+    <div class="tieude">
+        GIẤY CHỨNG NHẬN
+    </div>
+
+    <div class="chungNhan">
+        Chứng nhận em:
+    </div>
+
+    <div
+    id="cnHoTen"
+    class="hoTen">
+    </div>
+
+    <div class="thanhTich">
+        Đạt thành tích xuất sắc trong kỳ thi:
+    </div>
+    
+    <div
+    id="cnKyThi"
+    class="kyThi">
+    </div>
+
+    <img
+    id="huyHieu"
+    class="huyHieu">
+
+    <div class="cotTrai">
+
+        <p>
+        Lớp:
+        <span id="cnLop"></span>
+        </p>
+
+        <p>
+        Điểm:
+        <span id="cnDiem"></span>
+        </p>
+        <p>
+        Xếp loại:
+        <span id="cnXepLoai"></span>
+        </p>
+        <p>
+        Xếp hạng:
+        <span id="cnXepHang"></span>
+        </p>
+
+    </div>
+
+    <div class="cotPhai">
+
+        <p>
+        Kỳ thi:
+        <span id="cnKyThi2"></span>
+        </p>
+
+        <p>
+        Ngày thi:
+        <span id="cnNgayThi"></span>
+        </p>
+
+        <p>
+        Mã CN:
+        <span id="cnMaCN"></span>
+        </p>
+
+    <div class="banToChuc">
+
+    <div class="chucDanh">
+
+        TM. BAN TỔ CHỨC
+
+        <br>
+
+        CHỦ NHIỆM CLB
+
+    </div>
+    <div class="qrBox">
+
+    <img
+    id="qrCode"
+    class="qrCode">
+
+    <div class="qrText">
+
+        Quét để xác thực
+
+    </div>
+
+    </div>
+    <img
+    src="anhnen/chuki.png"
+    class="chuKy">
+
+    <div class="nguoiKy">
+
+        Bàng Tiến Hào
+
+    </div>
+
+</div>
+<script>
+
+const hoTen =
+localStorage.getItem("cnHoTen") || "";
+
+const lop =
+localStorage.getItem("cnLop") || "";
+
+const kyThi =
+localStorage.getItem("cnKyThi") || "";
+
+const diem =
+Number(
+localStorage.getItem("cnDiem")
+) || 0;
+
+const xepHang =
+localStorage.getItem("cnXepHang") || "";
+
+const maHS =
+localStorage.getItem("maThiSinh") || "";
+
+document.getElementById("cnHoTen")
+.innerHTML = hoTen;
+
+document.getElementById("cnLop")
+.innerHTML = lop;
+
+document.getElementById("cnKyThi")
+.innerHTML = kyThi;
+
+document.getElementById("cnKyThi2")
+.innerHTML = kyThi;
+
+document.getElementById("cnDiem")
+.innerHTML = diem;
+
+let xepLoai = "Khá";
+
+if(diem >= 18){
+
+    xepLoai = "Xuất sắc";
+
+}
+else if(diem >= 15){
+
+    xepLoai = "Giỏi";
+const linkXacThuc =
+
+"https://TEN-WEB-CUA-THAY.github.io/tracuu.html?maHS="
+
++ maHS;
+
+document.getElementById("qrCode")
+.src =
+
+"https://api.qrserver.com/v1/create-qr-code/?size=200x200&data="
+
++ encodeURIComponent(
+linkXacThuc
+);
+}
+
+document.getElementById("cnXepLoai")
+.innerHTML = xepLoai;
+
+document.getElementById("cnXepHang")
+.innerHTML = xepHang;
+
+document.getElementById("cnNgayThi")
+.innerHTML =
+new Date().toLocaleDateString("vi-VN");
+
+document.getElementById("cnMaCN")
+.innerHTML =
+"OLY-2026-" + maHS;
+
+if(diem >= 18){
+
+    document.getElementById("huyHieu")
+    .src =
+    "anhnen/gold.png";
+
+}
+else if(diem >= 15){
+
+    document.getElementById("huyHieu")
+    .src =
+    "anhnen/silver.png";
+
+}
+else{
+
+    document.getElementById("huyHieu")
+    .src =
+    "anhnen/bronze.png";
+
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Kết quả bài thi</title>
+
+<link
+rel="stylesheet"
+href="css/style-old.css">
+
+</head>
+
+<body>
+
+<div class="login-page">
+
+<div class="login-container">
+
+<h1>🏆 KẾT QUẢ BÀI THI</h1>
+
+<p>
+<strong>Họ tên:</strong>
+<span id="hoTen"></span>
+</p>
+
+<p>
+<strong>Lớp:</strong>
+<span id="lop"></span>
+</p>
+
+<p>
+<strong>Ngày sinh:</strong>
+<span id="ngaySinh"></span>
+</p>
+
+<p>
+<strong>Kỳ thi:</strong>
+<span id="kyThi"></span>
+</p>
+
+<hr>
+
+<p>
+<strong>Số câu đúng:</strong>
+<span id="soDung"></span>
+</p>
+
+<p>
+<strong>Số câu sai:</strong>
+<span id="soSai"></span>
+</p>
+
+<p>
+<strong>Điểm:</strong>
+<span id="diem"></span>
+</p>
+
+<p>
+<strong>Tỷ lệ đúng:</strong>
+<span id="tyLe"></span>
+</p>
+<p>
+<strong>Xếp loại:</strong>
+<span id="xepLoai"></span>
+</p>
+<div class="badge-box">
+
+    <div id="huyHieu"></div>
+
+</div>
+<button onclick="veTrangChu()">
+
+🏠 VỀ TRANG CHỦ
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+console.log("Ketqua.html đã chạy");
+
+document.getElementById("hoTen")
+.innerHTML =
+localStorage.getItem(
+"tenThiSinh"
+);
+
+document.getElementById("lop")
+.innerHTML =
+localStorage.getItem(
+"lopThiSinh"
+);
+
+document.getElementById("ngaySinh")
+.innerHTML =
+localStorage.getItem(
+"ngaySinh"
+);
+
+document.getElementById("kyThi")
+.innerHTML =
+localStorage.getItem(
+"kyThi"
+);
+
+let diem =
+Number(
+localStorage.getItem(
+"diemThi"
+)
+);
+
+let tong =
+Number(
+localStorage.getItem(
+"tongSoCau"
+)
+);
+
+let sai =
+Number(
+localStorage.getItem(
+"soCauSai"
+)
+);
+
+let tyLe =
+Math.round(
+diem / tong * 100
+);
+let xepLoai = "";
+
+if(tyLe >= 90){
+
+    xepLoai = "🏆 Xuất sắc";
+
+}
+else if(tyLe >= 80){
+
+    xepLoai = "🥇 Giỏi";
+
+}
+else if(tyLe >= 65){
+
+    xepLoai = "🥈 Khá";
+
+}
+else if(tyLe >= 50){
+
+    xepLoai = "🥉 Đạt";
+
+}
+else{
+
+    xepLoai = "📚 Cần cố gắng";
+
+}
+
+document.getElementById("soDung")
+.innerHTML = diem;
+
+document.getElementById("soSai")
+.innerHTML = sai;
+
+document.getElementById("diem")
+.innerHTML =
+diem + "/" + tong;
+
+document.getElementById("tyLe")
+.innerHTML =
+tyLe + "%";
+
+document.getElementById("xepLoai")
+.innerHTML =
+xepLoai;
+let huyHieu = document.getElementById(
+"huyHieu"
+);
+
+if(tyLe >= 90){
+
+    huyHieu.innerHTML =
+    "🏆 HUY HIỆU VÀNG";
+
+    huyHieu.style.background =
+    "#ffd700";
+
+}
+else if(tyLe >= 80){
+
+    huyHieu.innerHTML =
+    "🥇 HUY HIỆU BẠC";
+
+    huyHieu.style.background =
+    "#c0c0c0";
+
+}
+else if(tyLe >= 65){
+
+    huyHieu.innerHTML =
+    "🥉 HUY HIỆU ĐỒNG";
+
+    huyHieu.style.background =
+    "#cd7f32";
+
+}
+else{
+
+    huyHieu.innerHTML =
+    "📚 TIẾP TỤC CỐ GẮNG";
+
+    huyHieu.style.background =
+    "#e0e0e0";
+
+}
+if(
+!localStorage.getItem("daGuiKetQua")
+){
+
+    guiKetQua();
+
+    localStorage.setItem(
+        "daGuiKetQua",
+        "true"
+    );
+
+}
+async function guiKetQua(){
+
+    let kyThi =
+    localStorage.getItem("kyThi");
+
+    console.log(
+    "Mã HS:",
+    localStorage.getItem("maThiSinh")
+);
+
+    let formData = new FormData();
+
+    formData.append(
+"entry.131085548",
+localStorage.getItem("maThiSinh")
+);
+
+formData.append(
+"entry.766043376",
+localStorage.getItem("tenThiSinh")
+);
+
+formData.append(
+    "entry.116346032",
+    localStorage.getItem("gioiTinh")
+);
+
+formData.append(
+"entry.1278051019",
+localStorage.getItem("lopThiSinh")
+);
+
+formData.append(
+"entry.465767204",
+localStorage.getItem("kyThi")
+);
+
+formData.append(
+"entry.2000020160",
+diem
+);
+
+formData.append(
+"entry.15166885",
+diem
+);
+
+formData.append(
+"entry.1463297757",
+sai
+);
+
+formData.append(
+"entry.972839558",
+localStorage.getItem("thoiGianHoanThanh")
+);
+
+formData.append(
+"entry.1670856791",
+localStorage.getItem("soLanRoiTab") || 0
+);
+
+formData.append(
+"entry.1112656001",
+new Date().toISOString().split("T")[0]
+);
+console.log("Mã HS:", localStorage.getItem("maThiSinh"));
+console.log("Họ tên:", localStorage.getItem("tenThiSinh"));
+console.log("Lớp:", localStorage.getItem("lopThiSinh"));
+console.log("Ngày sinh:", localStorage.getItem("ngaySinh"));
+console.log("Kỳ thi:", localStorage.getItem("kyThi"));
+console.log("Điểm:", diem);
+console.log("Tổng:", tong);
+console.log("Tỷ lệ:", tyLe);
+console.log("Thời gian:", localStorage.getItem("thoiGianHoanThanh"));
+console.log("Rời tab:", localStorage.getItem("soLanRoiTab"));
+    let formURL = "";
+
+if(kyThi === "Olympic Toán 2026"){
+
+    formURL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSeLmo1qqAHM8awDUh_9qWJ720NZNeYvTGAzemECLWkqRyneEg/formResponse";
+
+}
+else if(kyThi === "Olympic Ngữ văn 2026"){
+
+    formURL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSc9mxkAzPAVcTa5dXUsqBNXOk_R5pcB873ek2g7hM54CPlF7g/formResponse";
+
+}
+else if(kyThi === "Olympic Tiếng Anh 2026"){
+
+    formURL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSfVEe-5XESX7UqXhjkUcnvQBM4dN3LbmZ8xzrpw6Dz1WkqLPA/formResponse";
+
+}
+else if(kyThi === "Olympic 2026"){
+
+    formURL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSeUx_Q0bJ1OKkrSbgKZYLVKKIAykiq1mgAigo1w6aobr0PX4Q/formResponse";
+
+}
+
+fetch(
+formURL,
+{
+    method:"POST",
+    mode:"no-cors",
+    body:formData
+}
+);
+
+    console.log("Đã gửi kết quả lên Google Form");
+
+}
+
+function veTrangChu(){
+
+    localStorage.clear();
+
+    window.location.href =
+    "index.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Kết quả thi</title>
+
+<link
+rel="stylesheet"
+href="css/style-old.css">
+</head>
+
+<body>
+
+<nav class="menu">
+
+ <a href="index.html">Trang chủ</a>
+
+    <a href="thongbao.html">Thông báo</a>
+
+    <a href="xephang.html">Bảng xếp hạng</a>
+
+    <a href="thele.html">Thể lệ</a>
+
+<div class="user-menu">
+
+<a href="#"
+class="login-btn"
+id="taiKhoanBtn">
+
+</a>
+
+<div
+id="userDropdown"
+class="user-dropdown">
+
+<a href="trangcanhan.html">
+Hồ sơ cá nhân
+</a>
+
+<a href="chonkithi.html">
+🏆 Kỳ thi của tôi
+</a>
+
+<a href="ketquathi.html">
+📊 Kết quả thi
+</a>
+
+<a href="xephang.html">🏆 Bảng xếp hạng</a>
+
+<a href="#"
+onclick="dangXuat()">
+
+🚪 Đăng xuất
+
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<section class="welcome-box">
+
+<h2>📊 KẾT QUẢ THI CỦA TÔI</h2>
+
+<p id="tenHocSinh"></p>
+<p id="lopHocSinh"></p>
+
+<table id="bangKetQua">
+<thead>
+
+<tr>
+
+<th>Kỳ thi</th>
+
+<th>Điểm</th>
+
+<th>Xếp loại</th>
+
+<th>Thời gian</th>
+
+<th>Xếp hạng</th>
+
+<th>Chứng nhận</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+</section>
+
+<script>
+
+
+if(
+localStorage.getItem("dangNhap")
+!== "true"
+){
+
+window.location.href =
+"login.html";
+
+}
+
+document.getElementById(
+"taiKhoanBtn"
+).innerHTML =
+localStorage.getItem("hoTen")
++ " ▼";
+
+document.getElementById(
+"tenHocSinh"
+).innerHTML =
+localStorage.getItem("hoTen");
+
+document.getElementById(
+"lopHocSinh"
+).innerHTML =
+localStorage.getItem("lop");
+
+const tbody = document.querySelector("#bangKetQua tbody");
+
+const csvMap = {
+
+"Olympic Toán 2026":
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vTpyBmphKKF3lC2YXtIAU7GZO0R7te1Orvoi8KqmHx-PbMKfl2r8iNwz5Z5PA2iUr5ol9A1-AraIMvi/pub?output=csv",
+
+"Olympic Ngữ văn 2026":
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vTQi1mhGw-K9xsKeYgqpe-n3XvALt-PcPb-oOkVxHJ2CLhyfy9QlzkgWnNK24zjQCWmO5q_YuMy5Sga/pub?output=csv",
+
+"Olympic Tiếng Anh 2026":
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vQtvs9nZ-1ab-DR-rekNM37FXv65Xz8va5RX-98kdy6kbCRrIZIaeO5GgPDZDZdklho2Wk2OuJx-yzZ/pub?output=csv",
+
+"Olympic 2026":
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vT1XU2cW4LBuNHihn58r7svCjjtN06q_1e6BndfbPH6yja2nHhadihWkZIBzr7CSnWO5YLeGxMneJJK/pub?output=csv"
+
+};
+
+const btn =
+document.getElementById(
+"taiKhoanBtn"
+);
+
+btn.addEventListener(
+"click",
+function(e){
+
+e.preventDefault();
+
+const menu =
+document.getElementById(
+"userDropdown"
+);
+
+menu.style.display =
+menu.style.display ===
+"block"
+? "none"
+: "block";
+
+});
+
+function dangXuat(){
+
+localStorage.clear();
+
+window.location.href =
+"index.html";
+
+}
+
+async function taiKetQua(){
+
+const maHS =
+localStorage.getItem(
+"maThiSinh"
+);
+
+tbody.innerHTML = "";
+
+for(const tenKyThi in csvMap){
+
+    try{
+
+        const response =
+        await fetch(
+        csvMap[tenKyThi]
+        );
+
+        const text =
+        await response.text();
+
+        const rows =
+        text.trim().split("\n");
+
+        rows.slice(1).forEach(row=>{
+
+            const c =
+            row.split(",");
+
+            if(c[1] === maHS){
+
+    let diem =
+    Number(c[5] || 0);
+
+    let xepLoai =
+    "Đạt";
+
+    if(diem >= 90){
+
+        xepLoai = "Xuất sắc";
+
+    }
+    else if(diem >= 80){
+
+        xepLoai = "Giỏi";
+
+    }
+    else if(diem >= 65){
+
+        xepLoai = "Khá";
+
+    }
+
+    // Tính xếp hạng
+
+    let ds = [];
+
+    rows.slice(1).forEach(r=>{
+
+        const x = r.split(",");
+
+        ds.push({
+
+    maHS:x[1] || "",
+
+    diem:Number(
+    x[5] || 0
+    ),
+
+    roiTab:Number(
+    x[9] || 0
+    ),
+
+    thoiGian:
+    x[8] || ""
+
+});
+
+    });
+
+    ds.sort((a,b)=>{
+
+    if(
+    b.diem !== a.diem
+    ){
+
+        return b.diem - a.diem;
+
+    }
+
+    if(
+    a.roiTab !== b.roiTab
+    ){
+
+        return a.roiTab - b.roiTab;
+
+    }
+
+    return parseTG(
+    a.thoiGian
+    ) -
+    parseTG(
+    b.thoiGian
+    );
+
+});
+
+    let hang =
+    ds.findIndex(
+    x =>
+    x.maHS === maHS
+    ) + 1;
+
+    let chungNhan =
+    "Chưa đạt";
+
+    if(
+    diem >= 80 ||
+    hang <= 10
+    ){
+
+        chungNhan = `
+        <button onclick="
+        localStorage.setItem(
+        'cnHoTen',
+        localStorage.getItem(
+        'hoTen'
+        ));
+
+        localStorage.setItem(
+        'cnLop',
+        localStorage.getItem(
+        'lop'
+        ));
+
+        localStorage.setItem(
+        'cnKyThi',
+        '${c[4]}'
+        );
+
+        localStorage.setItem(
+        'cnDiem',
+        '${diem}'
+        );
+
+        localStorage.setItem(
+        'cnHang',
+        '${hang}/${ds.length}'
+        );
+
+        window.location.href=
+        'chungnhan.html';
+        ">
+        📜 Xem
+        </button>
+        `;
+    }
+
+    tbody.innerHTML += `
+    <tr>
+
+    <td>${c[4]}</td>
+
+    <td>${diem}</td>
+
+    <td>${xepLoai}</td>
+
+    <td>${c[8]}</td>
+
+    <td>🏆 ${hang}/${ds.length}</td>
+
+    <td>${chungNhan}</td>
+
+    </tr>
+    `;
+
+}
+
+        });
+
+    }catch(err){
+
+        console.error(
+        `Lỗi khi tải dữ liệu kỳ thi ${tenKyThi}:`,
+        err
+        );
+
+    }
+
+}
+
+}
+function parseTG(tg){
+
+    if(!tg) return 999999;
+
+    const p = tg.split(":");
+
+    if(p.length === 3){
+
+        return Number(p[0])*3600 +
+               Number(p[1])*60 +
+               Number(p[2]);
+
+    }
+
+    return 999999;
+
+}
+taiKetQua();
+
+</script>
+
+</body>
+
+</html>

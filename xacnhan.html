@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Xác nhận thông tin thí sinh</title>
+
+<link
+rel="stylesheet"
+href="css/style-old.css">
+
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <div class="login-container">
+
+        <h1>XÁC NHẬN THÔNG TIN</h1>
+
+        <p>
+            <strong>Họ và tên:</strong>
+            <span id="hoTen"></span>
+        </p>
+
+        <p>
+            <strong>Lớp:</strong>
+            <span id="lop"></span>
+        </p>
+
+        <p>
+            <strong>Ngày sinh:</strong>
+            <span id="ngaySinh"></span>
+        </p>
+
+        <p>
+            <strong>Kỳ thi:</strong>
+            <span id="kyThi"></span>
+        </p>
+
+        <p>
+            <strong>Thời gian làm bài:</strong>
+            30 phút
+        </p>
+
+        <p>
+            <strong>Số câu hỏi:</strong>
+            50 câu
+        </p>
+
+        <label style="display:block;margin:20px 0;">
+
+            <input
+            type="checkbox"
+            id="camKet">
+
+            Tôi đã kiểm tra đúng thông tin cá nhân
+            và cam kết thực hiện đúng quy chế thi.
+
+        </label>
+
+        <button onclick="batDauThi()">
+
+            🚀 BẮT ĐẦU THI
+
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+if(
+!localStorage.getItem(
+"tenThiSinh"
+)
+){
+
+    alert(
+    "Vui lòng đăng nhập!"
+    );
+
+    window.location.href =
+    "login.html";
+}
+
+document.getElementById(
+"hoTen"
+).innerHTML =
+
+localStorage.getItem(
+"tenThiSinh"
+);
+
+document.getElementById(
+"lop"
+).innerHTML =
+
+localStorage.getItem(
+"lopThiSinh"
+);
+
+document.getElementById(
+"ngaySinh"
+).innerHTML =
+
+localStorage.getItem(
+"ngaySinh"
+);
+
+document.getElementById(
+"kyThi"
+).innerHTML =
+
+localStorage.getItem(
+"kyThi"
+);
+
+function batDauThi(){
+
+    if(
+    !document.getElementById(
+    "camKet"
+    ).checked
+    ){
+
+        alert(
+        "Vui lòng xác nhận cam kết!"
+        );
+
+        return;
+    }
+
+    document.documentElement
+    .requestFullscreen();
+
+    window.location.href =
+    "thi.html";
+}
+
+</script>
+
+</body>
+
+</html>

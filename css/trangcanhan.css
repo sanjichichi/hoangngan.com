@@ -1,0 +1,1375 @@
+/*=========================================================
+            TRANG CÁ NHÂN - OLYMPIC HSG
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f8fc;
+}
+
+/*=========================================================
+                    PROFILE HEADER
+=========================================================*/
+
+.profile-header{
+
+    width:95%;
+
+    max-width:1450px;
+
+    margin:35px auto;
+
+}
+
+.profile-cover{
+
+    display:grid;
+
+    grid-template-columns:220px 1fr 280px;
+
+    gap:30px;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/*=========================================================
+                    AVATAR
+=========================================================*/
+
+.profile-avatar-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+}
+
+.profile-avatar{
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:6px solid #2196f3;
+
+    transition:.35s;
+
+}
+
+.profile-avatar:hover{
+
+    transform:scale(1.05);
+
+}
+
+.profile-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.profile-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.profile-title h1{
+
+    color:#1565c0;
+
+    font-size:36px;
+
+}
+
+.status{
+
+    background:#e8f5e9;
+
+    color:#2e7d32;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+}
+
+/*=========================================================
+                PROFILE SUBTITLE
+=========================================================*/
+
+.profile-subtitle{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-bottom:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.profile-subtitle span{
+
+    color:#555;
+
+    font-size:17px;
+
+}
+
+.profile-subtitle strong{
+
+    color:#1565c0;
+
+}
+
+/*=========================================================
+                PROFILE GRID
+=========================================================*/
+
+.profile-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.profile-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:#f8fbff;
+
+    border-left:5px solid #2196f3;
+
+    border-radius:15px;
+
+    padding:16px;
+
+    transition:.3s;
+
+}
+
+.profile-item:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+
+}
+
+.profile-item i{
+
+    font-size:26px;
+
+    color:#1976d2;
+
+}
+
+.profile-item label{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+.profile-item p{
+
+    margin-top:5px;
+
+    color:#0d47a1;
+
+    font-weight:600;
+
+}
+
+/*=========================================================
+                MEMBER CARD
+=========================================================*/
+
+.member-box{
+
+    background:linear-gradient(135deg,#1976d2,#42a5f5);
+
+    color:#fff;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(25,118,210,.30);
+
+}
+
+.member-box h3{
+
+    margin-bottom:18px;
+
+}
+
+.qr-code{
+
+    width:150px;
+
+    height:150px;
+
+    background:#fff;
+
+    padding:8px;
+
+    border-radius:12px;
+
+    margin:15px auto;
+
+    display:block;
+
+}
+
+.member-box p{
+
+    margin:10px 0;
+
+}
+
+.member-btn{
+
+    margin-top:18px;
+
+    background:#fafafa;
+
+    color:#1565c0;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+/*=========================================================
+                DASHBOARD STATS
+=========================================================*/
+
+.dashboard-stats{
+
+    width:95%;
+
+    max-width:1450px;
+
+    margin:30px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.dashboard-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:25px;
+
+    background:#5eff00;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
+
+}
+
+.dashboard-card i{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:#e3f2fd;
+
+    color:#1976d2;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    flex-shrink:0;
+
+}
+
+.dashboard-card h2{
+
+    margin:0;
+
+    font-size:34px;
+
+    color:#1565c0;
+
+}
+
+.dashboard-card p{
+
+    margin-top:5px;
+
+    color:#666;
+
+}
+/*=========================================================
+                DASHBOARD CONTENT
+=========================================================*/
+
+.dashboard-content{
+
+    width:95%;
+
+    max-width:1450px;
+
+    margin:35px auto;
+
+    display:grid;
+
+    grid-template-columns:340px 1fr;
+
+    gap:30px;
+
+}
+
+.dashboard-left,
+
+.dashboard-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+/*=========================================================
+                    CARD
+=========================================================*/
+
+.card-box{
+
+    background:#1ee72e;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.card-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:20px;
+
+}
+
+.card-title i{
+
+    color:#1976d2;
+
+    font-size:26px;
+
+}
+
+.card-title h2{
+
+    color:#1565c0;
+
+    font-size:24px;
+
+}
+
+/*=========================================================
+                CHART
+=========================================================*/
+
+.chart-card{
+
+    background:#d5e47e;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    min-height:450px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.chart-card canvas{
+
+    width:100%!important;
+
+    height:450px!important;
+
+}
+
+/*=========================================================
+                TARGET
+=========================================================*/
+
+.target-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.target-item{
+
+    background:#f8fbff;
+
+    border-left:4px solid #2196f3;
+
+    border-radius:12px;
+
+    padding:15px;
+
+}
+
+.target-item h3{
+
+    color:#1565c0;
+
+    margin-bottom:6px;
+
+}
+
+.target-item p{
+
+    color:#555;
+
+}
+
+/*=========================================================
+                HISTORY TABLE
+=========================================================*/
+
+.table-wrapper{
+
+    overflow:auto;
+
+}
+
+#historyTable{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+#historyTable thead{
+
+    background:#1976d2;
+
+    color:#f8fafa;
+
+}
+
+#historyTable th{
+
+    padding:15px;
+
+    white-space:nowrap;
+
+}
+
+#historyTable td{
+
+    padding:15px;
+
+    border-bottom:2px solid #3fe819;
+
+    text-align:center;
+
+}
+
+#historyTable tbody tr{
+
+    transition:.25s;
+
+}
+
+#historyTable tbody tr:hover{
+
+    background:#e3f2fd;
+
+}
+
+#historyTable tbody tr:nth-child(even){
+
+    background:#fafafa;
+
+}
+/*=========================================================
+                    THÀNH TÍCH
+=========================================================*/
+
+.achievement-card{
+
+    width:95%;
+
+    max-width:1450px;
+
+    margin:35px auto;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.achievement-card h2{
+
+    color:#1565c0;
+
+    margin-bottom:25px;
+
+}
+
+.achievement-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.achievement-grid>div{
+
+    background:linear-gradient(135deg,#1976d2,#42a5f5);
+
+    color:#fff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.achievement-grid>div:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(25,118,210,.35);
+
+}
+
+.achievement-grid h1{
+
+    font-size:52px;
+
+    margin-bottom:10px;
+
+}
+
+.achievement-grid p{
+
+    font-size:18px;
+
+}
+
+/*=========================================================
+                    HUY HIỆU
+=========================================================*/
+
+.badge-section{
+
+    width:95%;
+
+    max-width:1450px;
+
+    margin:35px auto;
+
+}
+
+.badge-section h2{
+
+    color:#1565c0;
+
+    margin-bottom:25px;
+
+}
+
+.badge-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.badge-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    padding:30px 20px;
+
+    border-top:5px solid #2196f3;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.badge-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.badge-card i{
+
+    font-size:55px;
+
+    color:#ff9800;
+
+    margin-bottom:18px;
+
+}
+
+.badge-card h3{
+
+    color:#1565c0;
+
+    margin-bottom:10px;
+
+}
+
+.badge-card p{
+
+    color:#666;
+
+    line-height:1.6;
+
+}
+
+/*=========================================================
+                CHỨC NĂNG NHANH
+=========================================================*/
+
+.quick-action{
+
+    width:95%;
+
+    max-width:1450px;
+
+    margin:35px auto 60px;
+
+}
+
+.quick-action h2{
+
+    color:#1565c0;
+
+    margin-bottom:25px;
+
+}
+
+.quick-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:20px;
+
+}
+
+.quick-item{
+
+    text-decoration:none;
+
+    background:#fff;
+
+    color:#1565c0;
+
+    border-radius:20px;
+
+    padding:28px 15px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.quick-item:hover{
+
+    background:#1976d2;
+
+    color:#fff;
+
+    transform:translateY(-8px);
+
+}
+
+.quick-item i{
+
+    font-size:40px;
+
+    margin-bottom:15px;
+
+    display:block;
+
+}
+
+.quick-item span{
+
+    font-weight:bold;
+
+    font-size:17px;
+
+}
+
+/*=========================================================
+                    HIỆU ỨNG
+=========================================================*/
+
+.profile-cover,
+.dashboard-card,
+.card-box,
+.chart-card,
+.achievement-card,
+.badge-card,
+.quick-item{
+
+    animation:fadeUp .7s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================================================
+                SCROLLBAR
+=========================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2196f3;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef5fb;
+
+}
+
+/*=========================================================
+                RESPONSIVE
+=========================================================*/
+
+@media(max-width:1200px){
+
+.profile-cover{
+
+    grid-template-columns:1fr;
+
+}
+
+.dashboard-stats{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.dashboard-content{
+
+    grid-template-columns:1fr;
+
+}
+
+.achievement-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.badge-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.quick-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.profile-title{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    align-items:flex-start;
+
+}
+
+.profile-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.dashboard-stats{
+
+    grid-template-columns:1fr;
+
+}
+
+.achievement-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.badge-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.quick-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:500px){
+
+.quick-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.profile-avatar{
+
+    width:140px;
+
+    height:140px;
+
+}
+
+.profile-title h1{
+
+    font-size:28px;
+
+}
+
+.dashboard-card h2{
+
+    font-size:28px;
+
+}
+
+}
+/*=========================================================
+                    FOOTER
+=========================================================*/
+
+.site-footer{
+
+    width:100%;
+
+    margin-top:60px;
+
+    background:linear-gradient(135deg,#0d47a1,#1565c0);
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:45px 20px;
+
+}
+
+.site-footer h2{
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+}
+
+.site-footer h3{
+
+    color:#bbdefb;
+
+    margin-bottom:15px;
+
+}
+
+.site-footer p{
+
+    line-height:1.8;
+
+    color:#e3f2fd;
+
+}
+
+/*=========================================================
+                SHADOW
+=========================================================*/
+
+.profile-cover,
+.dashboard-card,
+.card-box,
+.chart-card,
+.achievement-card,
+.badge-card,
+.quick-item{
+
+    border:1px solid rgba(255,255,255,.7);
+
+}
+
+/*=========================================================
+                HOVER
+=========================================================*/
+
+.dashboard-card:hover i{
+
+    transform:rotate(10deg) scale(1.1);
+
+    transition:.35s;
+
+}
+
+.badge-card:hover i{
+
+    transform:scale(1.2);
+
+}
+
+.quick-item:hover i{
+
+    transform:scale(1.2);
+
+}
+
+.member-btn:hover{
+
+    background:#1976d2;
+
+    color:#fff;
+
+}
+
+/*=========================================================
+            TABLE SCROLL
+=========================================================*/
+
+.table-wrapper{
+
+    max-height:560px;      /* khoảng 10 dòng */
+
+    overflow-y:auto;
+
+    overflow-x:auto;
+
+}
+
+.table-wrapper::-webkit-scrollbar{
+
+    width:8px;
+
+    height:8px;
+
+}
+
+.table-wrapper::-webkit-scrollbar-thumb{
+
+    background:#90caf9;
+
+    border-radius:20px;
+
+}
+
+/*=========================================================
+            MÀU ĐIỂM
+=========================================================*/
+
+.diem-xuat-sac{
+
+    color:#2e7d32;
+
+    font-weight:bold;
+
+}
+
+.diem-gioi{
+
+    color:#1565c0;
+
+    font-weight:bold;
+
+}
+
+.diem-kha{
+
+    color:#fb8c00;
+
+    font-weight:bold;
+
+}
+
+.diem-yeu{
+
+    color:#e53935;
+
+    font-weight:bold;
+
+}
+
+/*=========================================================
+            THẺ THÀNH VIÊN
+=========================================================*/
+
+.member-box{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.member-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-70px;
+
+    right:-70px;
+
+    width:160px;
+
+    height:160px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+}
+
+.member-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-60px;
+
+    left:-60px;
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/*=========================================================
+            PROFILE
+=========================================================*/
+
+.profile-cover{
+
+    position:relative;
+
+}
+
+.profile-cover::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #1976d2,
+
+        #42a5f5,
+
+        #64b5f6
+
+    );
+
+}
+
+/*=========================================================
+            CARD TITLE
+=========================================================*/
+
+.card-title{
+
+    border-bottom:2px solid #e3f2fd;
+
+    padding-bottom:15px;
+
+}
+
+/*=========================================================
+            BADGE
+=========================================================*/
+
+.badge-card:nth-child(1){
+
+    border-top-color:#ffd700;
+
+}
+
+.badge-card:nth-child(2){
+
+    border-top-color:#43a047;
+
+}
+
+.badge-card:nth-child(3){
+
+    border-top-color:#ef6c00;
+
+}
+
+.badge-card:nth-child(4){
+
+    border-top-color:#1976d2;
+
+}
+
+/*=========================================================
+            QUICK ITEM
+=========================================================*/
+
+.quick-item:nth-child(1){
+
+    border-top:5px solid #1976d2;
+
+}
+
+.quick-item:nth-child(2){
+
+    border-top:5px solid #43a047;
+
+}
+
+.quick-item:nth-child(3){
+
+    border-top:5px solid #ef6c00;
+
+}
+
+.quick-item:nth-child(4){
+
+    border-top:5px solid #ab47bc;
+
+}
+
+.quick-item:nth-child(5){
+
+    border-top:5px solid #26a69a;
+
+}
+
+.quick-item:nth-child(6){
+
+    border-top:5px solid #e53935;
+
+}
+
+/*=========================================================
+            PRINT
+=========================================================*/
+
+@media print{
+
+.hero,
+.menu,
+.quick-action,
+.site-footer{
+
+    display:none;
+
+}
+
+body{
+
+    background:#fff;
+
+}
+
+.profile-cover,
+.card-box,
+.dashboard-card{
+
+    box-shadow:none;
+
+}
+
+}
+.dashboard-stats{
+
+    display:grid !important;
+
+    grid-template-columns:repeat(4,1fr) !important;
+
+    gap:20px !important;
+
+}

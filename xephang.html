@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BẢNG XẾP HẠNG</title>    
+<link
+rel="stylesheet"
+href="css/style-old.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:Arial,sans-serif;
+
+    background:#f5f7fa;
+
+    padding:20px;
+
+}
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+h1{
+
+    text-align:center;
+
+    color:#003366;
+
+    margin-bottom:20px;
+
+}
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    margin-bottom:20px;
+
+}
+
+select{
+
+    padding:10px;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+}
+
+#tongThiSinh{
+
+    font-weight:bold;
+
+    color:#003366;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+
+}
+
+thead{
+
+    background:#003366;
+
+    color:white;
+
+}
+
+th,
+
+td{
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    text-align:center;
+
+}
+
+tr:nth-child(even){
+
+    background:#f8f8f8;
+
+}
+
+tr:hover{
+
+    background:#eaf3ff;
+
+}
+
+.hang1{
+
+    background:#fff3cd !important;
+
+    font-weight:bold;
+
+}
+
+.hang2{
+
+    background:#e9ecef !important;
+
+    font-weight:bold;
+
+}
+
+.hang3{
+
+    background:#fce5cd !important;
+
+    font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🏆 BẢNG XẾP HẠNG CLB HỌC SINH KHÁ GIỎI</h1>
+
+<div class="topbar">
+
+<div>
+
+<label>Kỳ thi: </label>
+
+<select id="filterExam">
+
+<option>Tất cả</option>
+
+<option>Olympic Toán 2026</option>
+
+<option>Olympic Ngữ văn 2026</option>
+
+<option>Olympic Tiếng Anh 2026</option>
+
+<option>Olympic 2026</option>
+
+</select>
+
+</div>
+
+<div id="tongThiSinh">
+
+Tổng số thí sinh: 0
+
+</div>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Hạng</th>
+
+<th>Mã HS</th>
+
+<th>Họ tên</th>
+
+<th>Lớp</th>
+
+<th>Kỳ thi</th>
+
+<th>Điểm</th>
+
+<th>Rời tab</th>
+
+<th>Thời gian</th>
+
+</tr>
+
+</thead>
+
+<tbody id="rankingBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="js/xephang.js"></script>
+
+</body>
+</html>

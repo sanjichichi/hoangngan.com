@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang thông tin cá nhân</title>
+
+    <link rel="stylesheet" href="css/style-old.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/trangcanhan.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="page-bg">
+
+<!-- ================= HEADER ================= -->
+
+<header class="hero">
+
+    <div class="hero-overlay">
+
+        <div class="hero-left">
+
+            <img src="anhnen/logo.jpg"
+                 class="hero-logo">
+
+            <div class="hero-text">
+
+                <h1>CÂU LẠC BỘ HỌC SINH KHÁ GIỎI</h1>
+
+                <h2>TRƯỜNG THCS HOÀNG NGÂN</h2>
+
+                <p>
+                    Học tập ⭐ Sáng tạo ⭐ Hội nhập
+                </p>
+
+                <a href="chonkithi.html"
+                   class="hero-btn">
+
+                    🚀 THI NGAY
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ================= MENU ================= -->
+<nav class="menu">
+
+    <div class="menu-links">
+
+        <a href="index.html">Trang chủ</a>
+
+        <a href="thongbao.html">Thông báo</a>
+
+        <a href="xephang.html">Bảng xếp hạng</a>
+
+        <a href="thele.html">Thể lệ</a>
+
+    </div>
+
+    <div class="menu-user">
+
+        <a href="#"
+           class="login-btn"
+           id="taiKhoanBtn">
+
+           👤 Trang cá nhân
+
+        </a>
+        
+<div
+id="userDropdown"
+class="user-dropdown">
+
+<a href="trangcanhan.html">
+Hồ sơ cá nhân
+</a>
+
+<a href="chonkithi.html">
+🏆 Kỳ thi của tôi
+</a>
+
+<a href="ketquathi.html">
+📊 Kết quả thi
+</a>
+
+<a href="#"
+onclick="dangXuat()">
+
+🚪 Đăng xuất
+
+</a>
+
+</div>
+</div>
+
+</nav>
+<!-- ======================================================
+                PROFILE HEADER
+======================================================= -->
+
+<section class="profile-header">
+
+    <div class="profile-cover">
+
+        <div class="profile-avatar-box">
+
+            <img src="anhnen/avatar-default.png"
+                 id="avatarHocSinh"
+                 class="profile-avatar">
+            <input type="file"
+           id="chonAvatar"
+           accept="image/*"
+           hidden>
+
+    <button id="doiAvatar" class="member-btn">
+        📷 Đổi ảnh
+    </button>
+        </div>
+
+        <div class="profile-info">
+
+            <div class="profile-title">
+
+                <h1 id="hoTen">
+
+                    Nguyễn Văn A
+
+                </h1>
+
+                <span class="status">
+
+                    🟢 Đang hoạt động
+
+                </span>
+
+            </div>
+
+            <div class="profile-subtitle">
+
+                <span>
+
+                    <i class="fa-solid fa-id-card"></i>
+
+                    Mã HS:
+                    <strong id="maHS">
+
+                        HS001
+
+                    </strong>
+
+                </span>
+
+                <span>
+
+                    <i class="fa-solid fa-users"></i>
+
+                    Lớp:
+                    <strong id="lop">
+
+                        8A
+
+                    </strong>
+
+                </span>
+
+            </div>
+
+            <div class="profile-grid">
+
+                <div class="profile-item">
+
+                    <i class="fa-solid fa-school"></i>
+
+                    <div>
+
+                        <label>Trường</label>
+
+                        <p>
+
+                            THCS Hoàng Ngân
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="profile-item">
+
+                    <i class="fa-solid fa-calendar"></i>
+
+                    <div>
+
+                        <label>Ngày sinh</label>
+
+                        <p id="ngaySinh">
+
+                            01/01/2012
+
+                        </p>
+                        <p><strong>Giới tính:</strong> <span id="gioiTinh"></span></p>
+                    
+                    </div>
+
+                </div>
+
+                <div class="profile-item">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <div>
+
+                        <label>Điện thoại</label>
+
+                        <p id="sdt">
+
+                            **********
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="profile-item">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <div>
+
+                        <label>Email</label>
+
+                        <p id="email">
+
+                            Chưa cập nhật
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- THẺ THÀNH VIÊN -->
+
+        <div class="member-box">
+
+            <h3>
+
+                <i class="fa-solid fa-id-badge"></i>
+
+                THẺ THÀNH VIÊN
+
+            </h3>
+
+            <img src="anhnen/qr.png"
+                 class="qr-code">
+
+            <p>
+
+                <strong id="theHoTen">
+
+                    Nguyễn Văn A
+
+                </strong>
+
+            </p>
+
+            <p>
+
+                <span id="theMaHS">
+
+                    HS001
+
+                </span>
+
+            </p>
+
+            <p>
+
+                Lớp
+
+                <strong id="theLop">
+
+                    8A
+
+                </strong>
+
+            </p>
+
+            <button class="member-btn">
+
+                Thành viên CLB HSG
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================================
+                THỐNG KÊ
+======================================================= -->
+
+<section class="dashboard-stats">
+
+    <div class="dashboard-card">
+
+        <i class="fa-solid fa-star"></i>
+
+        <div>
+
+            <h2 id="diemCaoNhat">
+
+                0
+
+            </h2>
+
+            <p>Điểm cao nhất</p>
+
+        </div>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <i class="fa-solid fa-ranking-star"></i>
+
+        <div>
+
+            <h2 id="thuHang">
+
+                --
+
+            </h2>
+
+            <p>Thứ hạng</p>
+
+        </div>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <i class="fa-solid fa-pen"></i>
+
+        <div>
+
+            <h2 id="soLuotThi">
+
+                0
+
+            </h2>
+
+            <p>Lượt thi</p>
+
+        </div>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <i class="fa-solid fa-book"></i>
+
+        <div>
+
+            <h2 id="soKyThi">
+
+                0
+
+            </h2>
+
+            <p>Kỳ thi</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="dashboard-content">
+
+    <div class="dashboard-left">
+
+        <section class="chart-card">
+
+            <h2>
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                BIỂU ĐỒ KẾT QUẢ
+
+            </h2>
+
+            <canvas id="scoreChart"></canvas>
+
+        </section>
+
+    </div>
+
+    <div class="dashboard-right">
+
+        <section class="history-card">
+
+            <h2>
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                LỊCH SỬ CÁC LẦN THI
+
+            </h2>
+
+            <div class="table-wrapper">
+
+            <table id="historyTable">
+
+                <thead>
+
+                    <tr>
+
+                        <th>STT</th>
+                        <th>Kỳ thi</th>
+                        <th>Điểm</th>
+                        <th>Thời gian</th>
+                        <th>Rời tab</th>
+                        <th>Ngày</th>
+                        <th>Xếp loại</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="historyBody">
+
+                </tbody>
+
+            </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</section>
+
+<section class="achievement-card">
+
+<h2>
+
+🏆 Thành tích
+
+</h2>
+
+<div class="achievement-grid">
+
+<div>
+
+<h1 id="tongGiaiNhat">0</h1>
+
+<p>Giải Nhất</p>
+
+</div>
+
+<div>
+
+<h1 id="tongGiaiNhi">0</h1>
+
+<p>Giải Nhì</p>
+
+</div>
+
+<div>
+
+<h1 id="tongGiaiBa">0</h1>
+
+<p>Giải Ba</p>
+
+</div>
+
+<div>
+
+<h1 id="tongBangKhen">0</h1>
+
+<p>Chứng nhận</p>
+
+</div>
+
+</div>
+
+</section>
+<section class="badge-section">
+
+    <h2>
+
+        <i class="fa-solid fa-medal"></i>
+
+        HUY HIỆU
+
+    </h2>
+
+    <div class="badge-grid">
+
+        <div class="badge-card">
+
+            <i class="fa-solid fa-star"></i>
+
+            <h3>10 Điểm</h3>
+
+            <p>Đạt điểm tuyệt đối.</p>
+
+        </div>
+
+        <div class="badge-card">
+
+            <i class="fa-solid fa-ranking-star"></i>
+
+            <h3>Top 10</h3>
+
+            <p>Top học sinh toàn trường.</p>
+
+        </div>
+
+        <div class="badge-card">
+
+            <i class="fa-solid fa-fire"></i>
+
+            <h3>Không rời tab</h3>
+
+            <p>Thi nghiêm túc.</p>
+
+        </div>
+
+        <div class="badge-card">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <h3>Olympic</h3>
+
+            <p>Hoàn thành nhiều kỳ thi.</p>
+
+        </div>
+
+    </div>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/trangcanhan.js"></script>
+</body>
+</html>

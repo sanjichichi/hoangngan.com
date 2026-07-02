@@ -1,0 +1,177 @@
+/*=========================================================
+            TRANG CÁ NHÂN - OLYMPIC HSG
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f8fc;
+}
+
+/*=========================================================
+                    PROFILE HEADER
+=========================================================*/
+
+.profile-header{
+
+    width:95%;
+
+    max-width:1450px;
+
+    margin:35px auto;
+
+}
+
+.profile-cover{
+
+    display:grid;
+
+    grid-template-columns:220px 1fr 280px;
+
+    gap:30px;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+.exam-section{
+
+    width:90%;
+    max-width:1200px;
+    margin:50px auto;
+    text-align:center;
+
+}
+
+.exam-section h1{
+
+    color:#1565c0;
+    font-size:40px;
+    margin-bottom:15px;
+
+}
+
+.exam-section p{
+
+    color:#666;
+    font-size:18px;
+    margin-bottom:40px;
+
+}
+.exam-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+.exam-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    border:3px solid transparent;
+
+}
+.exam-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 35px rgba(0,0,0,.12);
+
+}
+.exam-card input{
+
+    display:none;
+
+}
+
+.exam-card:has(input:checked){
+
+    border:3px solid #1976d2;
+
+    background:#e3f2fd;
+
+}
+.icon{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+.exam-card h2{
+
+    color:#1565c0;
+
+    margin-bottom:15px;
+
+}
+
+.exam-card span{
+
+    display:block;
+
+    color:#666;
+
+    margin-top:8px;
+
+}
+#btnThi{
+
+    margin-top:45px;
+
+    background:#1976d2;
+
+    color:#fff;
+
+    border:none;
+
+    padding:18px 70px;
+
+    border-radius:40px;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+#btnThi:hover{
+
+    background:#0d47a1;
+
+    transform:translateY(-4px);
+
+}
+@media(max-width:900px){
+
+.exam-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}

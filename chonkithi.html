@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang thông tin cá nhân</title>
+
+    <link rel="stylesheet" href="css/style-old.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chonkithi.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="page-bg">
+
+<!-- ================= HEADER ================= -->
+
+<header class="hero">
+
+    <div class="hero-overlay">
+
+        <div class="hero-left">
+
+            <img src="anhnen/logo.jpg"
+                 class="hero-logo">
+
+            <div class="hero-text">
+
+                <h1>CÂU LẠC BỘ HỌC SINH KHÁ GIỎI</h1>
+
+                <h2>TRƯỜNG THCS HOÀNG NGÂN</h2>
+
+                <p>
+                    Học tập ⭐ Sáng tạo ⭐ Hội nhập
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ================= MENU ================= -->
+<nav class="menu">
+
+    <div class="menu-links">
+
+        <a href="index.html">Trang chủ</a>
+
+        <a href="thongbao.html">Thông báo</a>
+
+        <a href="xephang.html">Bảng xếp hạng</a>
+
+        <a href="thele.html">Thể lệ</a>
+
+    </div>
+
+    <div class="menu-user">
+
+        <a href="#"
+           class="login-btn"
+           id="taiKhoanBtn">
+
+            👤 Trang cá nhân
+
+        </a>
+        <div
+id="userDropdown"
+class="user-dropdown">
+
+<a href="hoso.html">
+Hồ sơ cá nhân
+</a>
+
+<a href="Trangchu.html">
+🏆 Kỳ thi của tôi
+</a>
+
+<a href="ketqua.html">
+📊 Kết quả thi
+</a>
+
+<a href="xephang.html">
+🏆 Bảng xếp hạng</a>
+<a href="#"
+onclick="dangXuat()">
+
+🚪 Đăng xuất
+
+</a>
+
+</div>
+
+</div>
+
+</nav>
+<section class="exam-section">
+
+    <h1>CHỌN KỲ THI OLYMPIC</h1>
+
+    <p>
+        Vui lòng lựa chọn kỳ thi trước khi bắt đầu.
+    </p>
+
+    <div class="exam-grid">
+
+        <label class="exam-card">
+
+            <input type="radio"
+                   name="exam"
+                   value="Olympic Toán 2026">
+
+            <div class="icon">📐</div>
+
+            <h2>Olympic Toán</h2>
+
+            <span>30 câu hỏi</span>
+
+            <span>45 phút</span>
+
+        </label>
+
+        <label class="exam-card">
+
+            <input type="radio"
+                   name="exam"
+                   value="Olympic Ngữ văn 2026">
+
+            <div class="icon">📚</div>
+
+            <h2>Olympic Ngữ văn</h2>
+
+            <span>30 câu hỏi</span>
+
+            <span>45 phút</span>
+
+        </label>
+
+        <label class="exam-card">
+
+            <input type="radio"
+                   name="exam"
+                   value="Olympic Tiếng Anh 2026">
+
+            <div class="icon">🇬🇧</div>
+
+            <h2>Olympic Tiếng Anh</h2>
+
+            <span>30 câu hỏi</span>
+
+            <span>45 phút</span>
+
+        </label>
+
+        <label class="exam-card">
+
+            <input type="radio"
+                   name="exam"
+                   value="Olympic tổng hợp 2026">
+
+            <div class="icon">🏆</div>
+
+            <h2>Olympic Tổng hợp</h2>
+
+            <span>60 câu hỏi</span>
+
+            <span>60 phút</span>
+
+        </label>
+
+    </div>
+
+    <button id="btnThi">
+        🚀 VÀO THI
+    </button>
+
+</section>
+<script>
+document.getElementById("btnThi").onclick = function(){
+
+    const exam = document.querySelector(
+        'input[name="exam"]:checked'
+    );
+
+    if(!exam){
+
+        alert("Vui lòng chọn kỳ thi.");
+
+        return;
+
+    }
+
+    console.log(exam.value);
+
+    localStorage.setItem("kyThi", exam.value);
+
+    window.location.href = "xacnhan.html";
+
+};
+const btn =
+document.getElementById(
+"taiKhoanBtn"
+);
+
+if(btn){
+
+    btn.innerHTML =
+    localStorage.getItem("hoTen")
+    + " ▼";
+
+    btn.addEventListener(
+    "click",
+    function(e){
+
+        e.preventDefault();
+
+        const menu =
+        document.getElementById(
+        "userDropdown"
+        );
+
+        menu.style.display =
+        menu.style.display ===
+        "block"
+        ? "none"
+        : "block";
+
+    });
+
+}
+function dangXuat(){
+
+    if(confirm(
+    "Bạn muốn đăng xuất?"
+    )){
+
+        localStorage.clear();
+
+        window.location.href =
+        "index.html";
+
+    }
+
+}
+</script>
+</body>
+</html>
