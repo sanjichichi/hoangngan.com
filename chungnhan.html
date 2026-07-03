@@ -119,6 +119,22 @@ href="css/style-old.css">
     </div>
 
 </div>
+</div>
+<div class="action-buttons">
+
+    <button onclick="window.print()">
+        🖨️ In giấy chứng nhận
+    </button>
+
+    <button onclick="taiPDF()">
+        📥 Tải về
+    </button>
+
+    <button onclick="window.location.href='index.html'">
+        🏠 Trang chủ
+    </button>
+
+</div>
 <script>
 
 const hoTen =
@@ -217,7 +233,11 @@ else{
     "anhnen/bronze.png";
 
 }
+function taiPDF(){
 
+    window.print();
+
+}
 </script>
 </body>
 </html>

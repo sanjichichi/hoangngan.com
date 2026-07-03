@@ -487,7 +487,13 @@ background:#003f88;
 
 .done-question{
 
-background:#28a745 !important;
+    background:#28a745 !important;
+
+    color:#fff;
+
+    border:2px solid #1f7a33;
+
+    transform:scale(1.05);
 
 }
 

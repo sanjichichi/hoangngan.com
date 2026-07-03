@@ -46,15 +46,18 @@ href="css/style-old.css">
 
     <!-- QUÊN MẬT KHẨU -->
     <p class="forgot-password">
-        Quên mật khẩu?<br>
-        Liên hệ giáo viên chủ nhiệm hoặc Ban tổ chức cuộc thi.
+    <a href="#" onclick="quenMatKhau(); return false;">
+        Quên mật khẩu?
+    </a>
     </p>
-
     </div>
 
 </div>
 
 <script src="js/login.js"></script>
-
+<script>function quenMatKhau() {
+    alert("Bạn đã quên mật khẩu!!! Vui lòng liên hệ giáo viên chủ nhiệm hoặc Ban tổ chức cuộc thi để được cấp lại mật khẩu.");
+}
+</script>
 </body>
 </html>

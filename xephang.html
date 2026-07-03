@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+<link rel="stylesheet" href="css/trangcanhan.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BẢNG XẾP HẠNG</title>    
@@ -153,7 +156,84 @@ tr:hover{
 </head>
 
 <body>
+<div class="page-bg">
 
+<header class="hero">
+
+    <div class="hero-overlay">
+
+        <div class="hero-left">
+
+            <img src="anhnen/logo.jpg"
+                 class="hero-logo">
+
+            <div class="hero-text">
+
+                <h1>CÂU LẠC BỘ HỌC SINH KHÁ GIỎI</h1>
+
+                <h2>TRƯỜNG THCS HOÀNG NGÂN</h2>
+
+                <p>Học tập ⭐ Sáng tạo ⭐ Hội nhập</p>
+
+                <a href="chonkithi.html"
+                   class="hero-btn">
+
+                    🚀 THI NGAY
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+<nav class="menu">
+
+    <div class="menu-links">
+
+        <a href="index.html">Trang chủ</a>
+
+        <a href="thongbao.html">Thông báo</a>
+
+        <a href="xephang.html">Bảng xếp hạng</a>
+
+        <a href="thele.html">Thể lệ</a>
+
+    </div>
+
+    <div class="menu-user">
+
+        <a href="#"
+           class="login-btn"
+           id="taiKhoanBtn">
+
+            👤 Trang cá nhân
+
+        </a>
+
+        <div id="userDropdown"
+             class="user-dropdown">
+
+            <a href="trangcanhan.html">Hồ sơ cá nhân</a>
+
+            <a href="chonkithi.html">🏆 Kỳ thi của tôi</a>
+
+            <a href="ketquathi.html">📊 Kết quả thi</a>
+
+            <a href="#"
+               onclick="dangXuat()">
+
+                🚪 Đăng xuất
+
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
 <div class="container">
 
 <h1>🏆 BẢNG XẾP HẠNG CLB HỌC SINH KHÁ GIỎI</h1>
@@ -223,6 +303,27 @@ Tổng số thí sinh: 0
 </div>
 
 <script src="js/xephang.js"></script>
+<script> const taiKhoanBtn = document.getElementById("taiKhoanBtn");
 
+if (taiKhoanBtn) {
+
+    taiKhoanBtn.innerHTML =
+        localStorage.getItem("hoTen") + " ▼";
+
+    taiKhoanBtn.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        const menu = document.getElementById("userDropdown");
+
+        menu.style.display =
+            menu.style.display === "block"
+                ? "none"
+                : "block";
+
+    });
+
+}
+</script>
 </body>
 </html>

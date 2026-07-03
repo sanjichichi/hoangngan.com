@@ -140,6 +140,7 @@ function taoThanhDieuHuong(){
         html += `
         <button
             type="button"
+            id="nav${index+1}"
             class="nav-btn"
             onclick="diDenCau(${index+1})">
             ${index+1}
